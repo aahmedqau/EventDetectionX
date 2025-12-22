@@ -11,39 +11,20 @@ US Elections Dataset – Political event tweets annotated as event/non-event.
 
 FA Cup Dataset – Sports-related tweets capturing match events (e.g., goals, saves).
 
-Both datasets include:
-
-Tweet text
-
-Timestamp
-
-Hashtags
-
-Contextual metadata (user mentions, URLs, etc.)
-
 
 Code Information:
-rankrag_topk_selection.py	(Fine-tunes RankRAG (RLLaMA-3) to select top-K relevant tweets.)
-event_detection_bert.py		(Classifies tweets using BERT-based transformer.)
-evaluation_metrics.py		(Computes precision, recall, F1-score, and accuracy.)
-train.py			(Coordinates pipeline execution, training, and evaluation)
+Run EventDetection.py
 
-Usage Instructions:
-
-Clone Repository
-git clone https://github.com/yourusername/rllama-bert-event-detection.git
-cd rllama-bert-event-detection
-
-
-Install Dependencies
-pip install torch transformers datasets scikit-learn pandas numpy
+Usage Instructions
+1.	We have the required CSV files in the correct format
+2.	All dependencies are installed (transformers, sentence-transformers, faiss-cpu, etc.)
+3.	We follow the execution flow as written in the Python script
+4.	Ensure CSV files (train.csv, valid.csv, test.csv) follow the exact column format.
+5.	The retrieval system requires either a corpus.csv or will fall back to using training tweets
+6.	Each tweet gets augmented with top-k retrieved contexts before training
 
 
-Run RankRAG Tweet Selection
-python rankrag_topk_selection.py --input data/US_Elections.csv --k 2000
 
-Run Event Detection using BERT
-python event_detection_bert.py --input outputs/topk_tweets.json --model bert-base-uncased
 
 
 
