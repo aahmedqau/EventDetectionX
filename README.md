@@ -7,13 +7,12 @@ Dataset Information
 
 Two datasets were used:
 
-US Elections Dataset – Political event tweets annotated as event/non-event.
+USElectionDataset – Political event instances
 
-FA Cup Dataset – Sports-related tweets capturing match events (e.g., goals, saves).
-
+FACupDataset – Sports-related event instances
 
 Code Information:
-Run EventDetection.py
+Run Event Detection.py
 
 Usage Instructions
 1.	We have the required CSV files in the correct format
@@ -21,9 +20,9 @@ Usage Instructions
 3.	We follow the execution flow as written in the Python script
 4.	Ensure CSV files (train.csv, valid.csv, test.csv) follow the exact column format.
 5.	The retrieval system requires either a corpus.csv or will fall back to using training tweets
-6.	Each tweet gets augmented with top-k retrieved contexts before training
+6.	Each event instance gets augmented with top-k retrieved contexts before training
 
-
+For baseline comparison you can run Python scripts: Comparison with baselines using FA Cup Dataset.py,  Comparison with baselines using US Election Dataset.py
 
 
 
